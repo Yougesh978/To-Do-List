@@ -1,0 +1,25 @@
+<%- include("header") -%>
+   <!-- <% if(ListTitle== "thursday" ){   %>           //  this is scriplet tag (<% $$$$ %>) used for sript functionality  to work in ejs file....we have to give to every js things every single one of them 
+    <h1 style="color: purple;">its a <%= ListTitle %> To Do list!!!</h1>  // to change any specific words we have to use (<%= xxx %>) 
+    <% }else{   %>
+    <h1 style="color:blue ;"> <%= ListTitle %> To Do list!!!</h1>
+  <%  }    %> -->
+  <div class="box" id="heading">
+  <h1>Hey! its <%=  ListTitle  %> </h1>
+</div>
+<div class ="box">
+   <% for(var i=0 ; i<newListItems.length ;i++){   %>
+    <div class="item" >
+    <input type="checkbox">
+    <p> <%=   newListItems[i]   %><p>
+    </div>
+    <% } %>
+  
+
+<form class ="item"action="/" method="post">
+    <input type="text" name="text" placeholder="New item" autocomplete="off">
+    <button type="submit" name ="btn" value="<%= ListTitle %>">+</button>
+  </form>
+
+</div>
+<%- include("footer") -%>
